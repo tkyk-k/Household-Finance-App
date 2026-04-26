@@ -27,6 +27,8 @@ async def get_assets(request: Request):
             "Authorization": f"Bearer {token}",
         }
     )
+    
+    print(res.text)
 
     data = res.json()[0]  # 1レコードだけ返る想定
 
