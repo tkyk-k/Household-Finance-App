@@ -41,17 +41,16 @@ async def get_assets(request: Request):
     diff_from_jan = total - total_jan
 
     # 割合
-    for u in data["users"]:
-        user_total = u["total"]
+    # for u in data["users"]:
+    #     user_total = u["total"]
 
-        u["ratio"] = user_total / total if total else 0
-        u["cash_ratio"] = u["cash"] / user_total if user_total else 0
-        u["investment_ratio"] = u["investment"] / user_total if user_total else 0
+    #     u["ratio"] = user_total / total if total else 0
+    #     u["cash_ratio"] = u["cash"] / user_total if user_total else 0
+    #     u["investment_ratio"] = u["investment"] / user_total if user_total else 0
 
     return {
         "counted_at": data["counted_at"],
         "total_assets": total,
         "diff_from_last_month": diff_from_last_month,
         "diff_from_jan": diff_from_jan,
-        "users": data["users"]
     }
